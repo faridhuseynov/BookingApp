@@ -4,8 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookingApp.Views"
+        xmlns:vm="clr-namespace:BookingApp.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="StartPage" Height="500" Width="600">
+        d:DesignHeight="500" d:DesignWidth="600" Name="Window"
+        d:DataContext="{d:DesignInstance vm:StartPageViewModel}">
     <StackPanel>
         <Image Height="200"
                Width="200"></Image>
