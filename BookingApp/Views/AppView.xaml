@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookingApp.Views"
+        xmlns:vm="clr-namespace:BookingApp.ViewModels"
         mc:Ignorable="d"
-        Title="AppView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="AppView" Height="600" Width="500"
+        d:DataContext="{d:DesignInstance vm:AppViewModel}">
+    <Window.Resources>
+        <ResourceDictionary Source="../ViewModelTemplate.xaml"/>
+    </Window.Resources>
+    <DockPanel>
+        <ContentControl Content="{Binding CurrentPage}"/>
+    </DockPanel>
 </Window>

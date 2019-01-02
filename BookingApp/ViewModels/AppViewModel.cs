@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight;
+﻿using BookingApp.Services;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +14,23 @@ namespace BookingApp.ViewModels
         private ViewModelBase currentPage;
         public ViewModelBase CurrentPage { get => currentPage; set => Set(ref currentPage, value); }
 
+        private readonly INavigationService navigation;
+
+        public AppViewModel(INavigationService navigation)
+        {
+            this.navigation = navigation;
+
+        }
+
+        private RelayCommand<Type> navigateCommand;
+        public RelayCommand<Type> NavigateCommand
+        {
+            get => navigateCommand ?? (navigateCommand = new RelayCommand<Type>(
+                param =>
+                {
+                    navigation.Navigate(param);
+                }
+            ));
+        }
     }
 }
