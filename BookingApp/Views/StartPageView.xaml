@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookingApp.Views"
         mc:Ignorable="d"
-        Title="StartPage" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="StartPage" Height="500" Width="600">
+    <StackPanel>
+        <Image Height="200"
+               Width="200"></Image>
+        <Label HorizontalAlignment="Center" 
+               FontSize="20"
+               Content="Username"></Label>
+        <TextBox FontSize="30"
+                 HorizontalContentAlignment="Center"
+                 Width="400"></TextBox>
+        <Label HorizontalAlignment="Center" 
+               FontSize="20"
+               Content="Password"></Label>
+        <TextBox FontSize="30"
+                 HorizontalContentAlignment="Center"
+                 Width="400"></TextBox>
+        <UniformGrid HorizontalAlignment="Stretch"
+                     Rows="1" Columns="2"
+                     Margin="50">
+        <Button FontSize="30">Sign Up</Button>
+        <Button FontSize="30">Login</Button>
+        </UniformGrid>
+    </StackPanel>
 </Window>

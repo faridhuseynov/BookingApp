@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookingApp.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,10 @@ namespace BookingApp
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var window = new AppView();
+            window.ShowDialog();
+        }
     }
 }
