@@ -17,18 +17,22 @@
                Content="Username"></Label>
         <TextBox FontSize="30"
                  HorizontalContentAlignment="Center"
+                 Text="{Binding CheckUser}"
                  Width="400"></TextBox>
         <Label HorizontalAlignment="Center" 
                FontSize="20"
                Content="Password"></Label>
         <TextBox FontSize="30"
+                 Text="{Binding CheckPassword}"
                  HorizontalContentAlignment="Center"
                  Width="400"></TextBox>
         <UniformGrid HorizontalAlignment="Stretch"
                      Rows="1" Columns="2"
                      Margin="50">
-            <Button FontSize="30">Sign Up</Button>
-            <Button FontSize="30">Login</Button>
+            <Button FontSize="30"
+                    Command="{Binding SignUpCommand}">Sign Up</Button>
+            <Button FontSize="30"
+                    Command="{Binding LoginCommand}">Login</Button>
         </UniformGrid>
     </StackPanel>
 </UserControl>

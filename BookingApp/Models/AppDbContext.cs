@@ -9,7 +9,7 @@ namespace BookingApp.Models
 {
     class AppDbContext:DbContext
     {
-        public AppDbContext() : base("DefaultConnection")
+        public AppDbContext() : base("AppConnection")
         {
            
         }
