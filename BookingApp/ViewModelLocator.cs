@@ -17,6 +17,8 @@ namespace BookingApp
     {
         private AppViewModel appViewModel;
         private StartPageViewModel startPageViewModel;
+        private SignUpViewModel signUpViewModel;
+
 
         private INavigationService navigationService;
         public static IContainer Container;
@@ -35,6 +37,7 @@ namespace BookingApp
                 navigationService = Container.Resolve<INavigationService>();
                 appViewModel = Container.Resolve<AppViewModel>();
                 startPageViewModel = Container.Resolve<StartPageViewModel>();
+                signUpViewModel = Container.Resolve<SignUpViewModel>();
 
                 navigationService.Register<StartPageViewModel>(startPageViewModel);
 
