@@ -24,6 +24,6 @@ namespace BookingApp.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        public List<TripTask> Checklist { get; set; }
+        public IEnumerable<Trip> Trips { get; set; }
     }
 }

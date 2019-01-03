@@ -1,0 +1,28 @@
+{
+  "defaultAssembly": "BookingApp",
+  "components": [
+    { "type": "BookingApp.ViewModels.AppViewModel" },
+    { "type": "BookingApp.ViewModels.StartPageViewModel" },
+    {
+      "type": "BookingApp.Models.AppDbContext",
+      "instanceScope": "single-instance"
+    },
+    //{
+    //  "type": "ContactList_MVVM.Services.MessageService",
+    //  "services": [
+    //    {
+    //      "type": "ContactList_MVVM.Services.IMessageService"
+    //    }
+    //  ]
+    //},
+    {
+      "type": "BookingApp.Services.NavigationService",
+      "services": [
+        {
+          "type": "BookingApp.Services.INavigationService"
+        }
+      ],
+      "instanceScope": "single-instance"
+    }
+  ]
+}

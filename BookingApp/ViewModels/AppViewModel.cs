@@ -1,6 +1,7 @@
 ﻿using BookingApp.Services;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace BookingApp.ViewModels
         public AppViewModel(INavigationService navigation)
         {
             this.navigation = navigation;
-
+            Messenger.Default.Register<ViewModelBase>(this,
+               viewModel => CurrentPage = viewModel);
         }
 
         private RelayCommand<Type> navigateCommand;
