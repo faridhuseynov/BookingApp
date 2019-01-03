@@ -16,7 +16,9 @@ namespace BookingApp
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            var locator = new ViewModelLocator();
             var window = new AppView();
+            window.DataContext = locator.GetAppViewModel();
             window.ShowDialog();
         }
     }

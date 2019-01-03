@@ -17,7 +17,7 @@ namespace BookingApp.Views
     /// <summary>
     /// Interaction logic for StartPage.xaml
     /// </summary>
-    public partial class StartPage : Window
+    public partial class StartPage : UserControl
     {
         public StartPage()
         {
