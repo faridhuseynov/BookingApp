@@ -1,6 +1,7 @@
 ﻿using BookingApp.Models;
 using BookingApp.Services;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,42 @@ namespace BookingApp.ViewModels
         private User newUser=new User();
         public User NewUser { get => newUser; set => Set(ref newUser, value); }     
 
+        void UserDataClear()
+        {
+            newUser.Email = newUser.Name = newUser.Password = newUser.PhotoLink = newUser.Surname = newUser.UserName = "";
+        }
 
         public SignUpViewModel(INavigationService navigation, AppDbContext db)
         {
             this.navigation = navigation;
             this.db = db;
         }
+
+        private RelayCommand registerCommand;
+        public RelayCommand RegisterCommand
+        {
+            get => registerCommand ?? (registerCommand = new RelayCommand(
+                () =>
+                {
+                    db.Users.Add(newUser);
+                    db.SaveChanges();
+                    UserDataClear();
+                    navigation.Navigate<StartPageViewModel>();
+                }
+            ));
+        }
+
+        private RelayCommand cancelCommand;
+        public RelayCommand CancelCommand
+        {
+            get => cancelCommand ?? (cancelCommand = new RelayCommand(
+                () =>
+                {
+                    UserDataClear();
+                    navigation.Navigate<StartPageViewModel>();
+                }
+            ));
+        }
+        
     }
 }

@@ -40,6 +40,7 @@ namespace BookingApp
                 signUpViewModel = Container.Resolve<SignUpViewModel>();
 
                 navigationService.Register<StartPageViewModel>(startPageViewModel);
+                navigationService.Register<SignUpViewModel>(signUpViewModel);
 
                 navigationService.Navigate<StartPageViewModel>();
             }

@@ -6,11 +6,34 @@
              xmlns:local="clr-namespace:BookingApp.Views"
              xmlns:vm="clr-namespace:BookingApp.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="500" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance vm:SignUpViewModel}">
     <StackPanel>
         <Label FontSize="20">Name</Label>
         <TextBox FontSize="20"
                  Text="{Binding NewUser.Name}"></TextBox>
+        <Label FontSize="20">Surname</Label>
+        <TextBox FontSize="20"
+                 Text="{Binding NewUser.Surname}"></TextBox>
+        <Label FontSize="20">Username</Label>
+        <TextBox FontSize="20"
+                 Text="{Binding NewUser.UserName}"></TextBox>
+        <Label FontSize="20">Email</Label>
+        <TextBox FontSize="20"
+                 Text="{Binding NewUser.Email}"></TextBox>
+        <Label FontSize="20">Password</Label>
+        <TextBox FontSize="20"
+                 Text="{Binding NewUser.Password}"></TextBox>
+        <Label FontSize="20">Photo Link</Label>
+        <TextBox FontSize="20"
+                 Text="{Binding NewUser.PhotoLink}"></TextBox>
+        <UniformGrid Rows="1" Columns="2">
+            <Button FontSize="40"
+                    Margin="20"
+                    Command="{Binding CancelCommand}">Cancel</Button>
+            <Button FontSize="40"
+                    Margin="20"
+                    Command="{Binding RegisterCommand}">Register</Button>
+        </UniformGrid>
     </StackPanel>
 </UserControl>

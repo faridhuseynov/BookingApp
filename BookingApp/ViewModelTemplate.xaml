@@ -5,8 +5,7 @@
                     xmlns:vm="clr-namespace:BookingApp.ViewModels">
     <DataTemplate DataType="{x:Type vm:StartPageViewModel}">
         <v:StartPage/>
-    </DataTemplate>
-    
+    </DataTemplate>    
     <DataTemplate DataType="{x:Type vm:SignUpViewModel}">
         <v:SignUpView/>
     </DataTemplate>
