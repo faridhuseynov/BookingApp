@@ -3,6 +3,7 @@
   "components": [
     { "type": "BookingApp.ViewModels.AppViewModel" },
     { "type": "BookingApp.ViewModels.StartPageViewModel" },
+    { "type": "BookingApp.ViewModels.SignUpViewModel" },
     {
       "type": "BookingApp.Models.AppDbContext",
       "instanceScope": "single-instance"
