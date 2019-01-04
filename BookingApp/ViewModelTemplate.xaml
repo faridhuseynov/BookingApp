@@ -9,4 +9,7 @@
     <DataTemplate DataType="{x:Type vm:SignUpViewModel}">
         <v:SignUpView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+        <v:DashboardView/>
+    </DataTemplate>
 </ResourceDictionary>

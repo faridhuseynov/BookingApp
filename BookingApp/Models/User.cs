@@ -32,6 +32,6 @@ namespace BookingApp.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        public IEnumerable<Trip> Trips { get; set; }
+        public List<Trip> Trips { get; set; } = new List<Trip>();
     }
 }
