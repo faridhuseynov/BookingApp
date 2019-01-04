@@ -9,24 +9,41 @@
              d:DesignHeight="500" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance vm:SignUpViewModel}">
     <StackPanel>
-        <Label FontSize="20">Name</Label>
+        <Label FontSize="20">Name*</Label>
         <TextBox FontSize="20"
+                 Margin="10,0"
                  Text="{Binding NewUser.Name}"></TextBox>
-        <Label FontSize="20">Surname</Label>
+        <Label FontSize="20">Surname*</Label>
         <TextBox FontSize="20"
+                 Margin="10,0"
                  Text="{Binding NewUser.Surname}"></TextBox>
-        <Label FontSize="20">Username</Label>
+        <Label FontSize="20">Username*</Label>
         <TextBox FontSize="20"
+                 Margin="10,0"
                  Text="{Binding NewUser.UserName}"></TextBox>
-        <Label FontSize="20">Email</Label>
-        <TextBox FontSize="20"
+        <Label FontSize="20">Email*</Label>
+        <TextBox FontSize="20"           
+                 Margin="10,0"
                  Text="{Binding NewUser.Email}"></TextBox>
-        <Label FontSize="20">Password</Label>
+        <Label FontSize="20">Password*</Label>
         <TextBox FontSize="20"
+                 Margin="10,0"
                  Text="{Binding NewUser.Password}"></TextBox>
         <Label FontSize="20">Photo Link</Label>
-        <TextBox FontSize="20"
+        <DockPanel LastChildFill="False">
+            <TextBox DockPanel.Dock="Left" FontSize="20"
+                     Margin="10,0,0,0"
+                     HorizontalContentAlignment="Stretch"
+                 Width="370"
                  Text="{Binding NewUser.PhotoLink}"></TextBox>
+            <Button DockPanel.Dock="Right"
+                    Margin="10,0"
+                    FontSize="20"
+                    HorizontalContentAlignment="Stretch">Browse</Button>
+        </DockPanel>
+        <Label FontSize="20"
+               Content="All fields with * should be filled in"
+               Foreground="Red"></Label>
         <UniformGrid Rows="1" Columns="2">
             <Button FontSize="40"
                     Margin="20"

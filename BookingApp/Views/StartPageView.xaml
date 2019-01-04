@@ -11,7 +11,8 @@
         d:DataContext="{d:DesignInstance vm:StartPageViewModel}">
     <StackPanel>
         <Image Height="200"
-               Width="200"></Image>
+               Width="200"
+               Source="{Binding PhotoPath, UpdateSourceTrigger=PropertyChanged}"></Image>
         <Label HorizontalAlignment="Center" 
                FontSize="20"
                Content="Username"></Label>
@@ -22,10 +23,10 @@
         <Label HorizontalAlignment="Center" 
                FontSize="20"
                Content="Password"></Label>
-        <TextBox FontSize="30"
-                 Text="{Binding CheckPassword}"
+        <PasswordBox FontSize="30"
+                 
                  HorizontalContentAlignment="Center"
-                 Width="400"></TextBox>
+                 Width="400"></PasswordBox>
         <UniformGrid HorizontalAlignment="Stretch"
                      Rows="1" Columns="2"
                      Margin="50">
