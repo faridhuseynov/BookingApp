@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace BookingApp.ViewModels
 {
@@ -22,8 +23,8 @@ namespace BookingApp.ViewModels
         private string checkUser;
         public string CheckUser { get => checkUser; set => Set(ref checkUser, value); }
 
-        private string checkPassword;
-        public string CheckPassword { get => checkPassword; set => Set(ref checkPassword, value); }
+        //private string checkPassword;
+        //public string CheckPassword { get => checkPassword; set => Set(ref checkPassword, value); }
 
         public StartPageViewModel(INavigationService navigation,AppDbContext db)
         {
@@ -41,17 +42,17 @@ namespace BookingApp.ViewModels
                 }
             ));
         }
-        private RelayCommand loginCommand;
-        public RelayCommand LoginCommand
+        private RelayCommand<PasswordBox> loginCommand;
+        public RelayCommand<PasswordBox> LoginCommand
         {
-            get => loginCommand ?? (loginCommand = new RelayCommand(
-                () =>
+            get => loginCommand ?? (loginCommand = new RelayCommand<PasswordBox>(
+                param =>
                 {
                     var check = db.Users.FirstOrDefault(x => x.UserName == checkUser);
                     if (check!=null)
                     {
                         PhotoPath = check.PhotoLink;
-                        if (check.Password == CheckPassword)
+                        if (check.Password == param.Password)
                         {
                             navigation.Navigate<SignUpViewModel>();
                         }

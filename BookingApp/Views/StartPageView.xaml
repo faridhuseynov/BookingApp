@@ -23,17 +23,17 @@
         <Label HorizontalAlignment="Center" 
                FontSize="20"
                Content="Password"></Label>
-        <PasswordBox FontSize="30"
-                 
-                 HorizontalContentAlignment="Center"
-                 Width="400"></PasswordBox>
+        <PasswordBox x:Name="password" FontSize="30"
+                     HorizontalContentAlignment="Center"
+                     Width="400"></PasswordBox>
         <UniformGrid HorizontalAlignment="Stretch"
                      Rows="1" Columns="2"
                      Margin="50">
             <Button FontSize="30"
                     Command="{Binding SignUpCommand}">Sign Up</Button>
             <Button FontSize="30"
-                    Command="{Binding LoginCommand}">Login</Button>
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding ElementName=password}">Login</Button>
         </UniformGrid>
     </StackPanel>
 </UserControl>

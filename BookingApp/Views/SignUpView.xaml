@@ -26,9 +26,8 @@
                  Margin="10,0"
                  Text="{Binding NewUser.Email}"></TextBox>
         <Label FontSize="20">Password*</Label>
-        <TextBox FontSize="20"
-                 Margin="10,0"
-                 Text="{Binding NewUser.Password}"></TextBox>
+        <PasswordBox x:Name="passwordRegister" FontSize="20"
+                     Margin="10,0"></PasswordBox>
         <Label FontSize="20">Photo Link</Label>
         <DockPanel LastChildFill="False">
             <TextBox DockPanel.Dock="Left" FontSize="20"
@@ -50,7 +49,8 @@
                     Command="{Binding CancelCommand}">Cancel</Button>
             <Button FontSize="40"
                     Margin="20"
-                    Command="{Binding RegisterCommand}">Register</Button>
+                    Command="{Binding RegisterCommand}"
+                    CommandParameter="{Binding ElementName=passwordRegister}">Register</Button>
         </UniformGrid>
     </StackPanel>
 </UserControl>

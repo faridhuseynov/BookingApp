@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace BookingApp.ViewModels
 {
@@ -29,12 +30,13 @@ namespace BookingApp.ViewModels
             this.db = db;
         }
 
-        private RelayCommand registerCommand;
-        public RelayCommand RegisterCommand
+        private RelayCommand<PasswordBox> registerCommand;
+        public RelayCommand<PasswordBox> RegisterCommand
         {
-            get => registerCommand ?? (registerCommand = new RelayCommand(
-                () =>
+            get => registerCommand ?? (registerCommand = new RelayCommand<PasswordBox>(
+                param =>
                 {
+                    newUser.Password = param.Password;
                     db.Users.Add(newUser);
                     db.SaveChanges();
                     UserDataClear();
