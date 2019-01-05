@@ -24,6 +24,8 @@ namespace BookingApp.Models
         [Required]
         public DateTime Arrival { get; set; }
 
-        public IEnumerable<TripTask> Checklist { get; set; }
+        public TripTask Checklist { get; set; }
+
+        public IEnumerable<User> Users { get; set; }
     }
 }
